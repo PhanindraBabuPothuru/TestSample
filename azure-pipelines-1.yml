@@ -1,0 +1,17 @@
+trigger:
+- main
+
+stages:
+  - stage: Build
+  displayName: BuildPackage
+  jobs:
+- job: BuildPackage
+  pool:laptop-0so2r6if\phani
+  steps:
+  - task: UiPathPack@5
+    inputs:
+      versionType: 'AutoVersion'
+      projectJsonPath: '$(Build.SourcesDirectory)\project.json'
+      outputType: 'Process'
+      orchestratorConnection: 'P1'
+      outputPath: '$(Build.ArtifactStagingDirectory)\Output'
