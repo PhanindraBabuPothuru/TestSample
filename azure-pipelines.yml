@@ -1,0 +1,25 @@
+# Starter pipeline
+- task: UiPathDeploy@5
+  inputs:
+    orchestratorConnection: 'P1'
+    packagesPath: 'https://cloud.uipath.com/phanindrababupothuru/Phani_Work/orchestrator_/packages?tid=75377&fid=237293&index=0&size=20&state=M4ewTgLgPgZglgUwDYBMoAcCuAjJdgAWCaKcYCAxhHCAHZQoLAUB6bAJAAxTsCMUAJigBmKABYAuhKA%3D'
+    folderName: 'Shared'
+    traceLevel: 'Information'
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
